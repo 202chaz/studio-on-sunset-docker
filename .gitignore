@@ -113,3 +113,4 @@ app/exports
 app/*.cache
 app/build
 app/.strapi-updater.json
+strapidata
