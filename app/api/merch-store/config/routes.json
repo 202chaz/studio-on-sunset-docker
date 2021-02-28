@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/merch-stores",
+      "handler": "merch-store.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/merch-stores/count",
+      "handler": "merch-store.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/merch-stores/:id",
+      "handler": "merch-store.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/merch-stores",
+      "handler": "merch-store.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/merch-stores/:id",
+      "handler": "merch-store.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/merch-stores/:id",
+      "handler": "merch-store.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

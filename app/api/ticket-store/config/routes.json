@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ticket-stores",
+      "handler": "ticket-store.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ticket-stores/count",
+      "handler": "ticket-store.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ticket-stores/:id",
+      "handler": "ticket-store.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ticket-stores",
+      "handler": "ticket-store.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ticket-stores/:id",
+      "handler": "ticket-store.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ticket-stores/:id",
+      "handler": "ticket-store.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

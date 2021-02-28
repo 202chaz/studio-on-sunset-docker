@@ -1,0 +1,141 @@
+<main class="home-container">
+    <header #header>
+      <div class="head-left">
+        <h1>{{ main?.artists[0]?.name }}</h1>
+        <h2>{{ main?.title }}</h2>
+        <div class="main-summary">
+          <p>{{ main?.artists[0]?.description }}</p>
+        </div>
+        <section class="date-duration">
+          <p class="date"><img src="/assets/calendar.svg"> {{ getEventDate(main) }}</p>
+          <p class="duration"><img src="/assets/clock.svg"> 1h 20min
+          </p>
+        </section>
+        <section class="next-prev">
+          <button class="next"><img src="/assets/Arrow-left.svg" alt="left"></button>
+          <button class="prev"><img src="/assets/Arrow-right.svg" alt="right"></button>
+        </section>
+      </div>
+      <div class="head-right">
+        <div class="get-tickets">
+          <h1>{{ getDay(main) }}</h1>
+          <h2>{{ headlineDate(main) }}</h2>
+          <button id='getTicket' (click)="showModal()"><img src="/assets/black-ticket.svg" alt="ticket"> Get Ticket</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="upcoming" #upcoming>
+      <h1>Upcoming Shows</h1>
+
+      <swiper [config]="config">
+        <div class="swiper-wrapper swiper-container carousel">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide" *ngFor="let event of events" (mouseenter)="setMainAct(event)">
+              <img [src]="getCover(event.artists[0]?.cover.url)" alt="">
+              <section class="details">
+                <h3>{{ event.title }}</h3>
+                <h2>{{ event?.artists[0]?.name }}</h2>
+                <p class="date">{{ getShortEventDate(event) }}</p>
+              </section>
+              <section class="hover-cta">
+                <button class="share">
+                  <img src="/assets/share.svg" alt="share"> Share
+                </button>
+                <button class="ticket">
+                  <img src="/assets/black-ticket.svg" alt="ticket"> Get Ticket
+                </button>
+              </section>
+            </div>
+            <!-- End of Slides -->
+          </div>
+        </div>
+      </swiper>
+
+    </div>
+
+    <div class="ticket-modal-container" #ticketModalContainer>
+      <div class="ticket-modal">
+        <section class="ticket-modal-row">
+          <div class="ticket-left">
+            <h1>{{ main?.artists[0].name }}</h1>
+            <h2>{{ main?.title }}</h2>
+            <section class="date-duration">
+              <p class="date"><img src="/assets/calendar.svg"> {{ getEventDate(main) }}</p>
+              <p class="duration"><img src="/assets/clock.svg"> 1h 20min
+              </p>
+            </section>
+            <section class="preview">
+              <img src="/assets/yellow-play-btn.svg">
+              <span>Preview</span>
+            </section>
+            <section class="detail-description">
+              <span>Show all</span>
+              <details>
+                <summary>
+                  {{ main?.artists[0].description }}
+                </summary>
+                <p><br /><br /><br /></p>
+              </details>
+            </section>
+            <section class="price">
+              <section class="total">
+                <p>Total:</p>
+                <h2>{{ calculateTotals() | currency: 'USD' }}</h2>
+              </section>
+              <a href="#">Go to Checkout</a>
+            </section>
+          </div>
+          <div class="ticket-right">
+            <section class="cart-items">
+              <div class="choose-ticket">
+                <h2>Choose a Ticket</h2>
+                <section class="selection">
+                  <select name="ticket" id="ticket" #select (change)="setTicket(select.value)" [value]="getTicketVal()">
+                    <option [value]="ticket.id" *ngFor="let ticket of availableTickets">{{ ticket.name }}</option>
+                  </select>
+                  <h3>{{ selectedTicket?.price | currency:'USD' }}</h3>
+                </section>
+              </div>
+              <h2 class="merch-title">Merch</h2>
+              <div class="item" *ngFor="let item of availableMerchandise" #item>
+                <img [src]="getImage(item)" alt="harry styles t-shirt" class="t-shirt">
+                <section class="item-details">
+                  <h4>{{ item.name }}</h4>
+                  <div class="quantity">
+                    <section class="options">
+                      <div *ngIf="item.type === 'apparel'">
+                        <label for="size">Size</label>
+                        <select name="size" id="size">
+                          <option value="Small" selected>S</option>
+                          <option value="Medium">M</option>
+                          <option value="Large">L</option>
+                          <option value="Extra Large">XL</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="qty">Qty</label>
+                        <select name="qty" id="qty" #select (change)="setItem(select, item)">
+                          <option [value]="q" *ngFor="let q of qty" [attr.data-item]="item.id">{{ q }}</option>
+                        </select>
+                      </div>
+                    </section>
+                    <h3 id='second-price'>{{ item.price | currency:'USD' }}</h3>
+                  </div>
+                </section>
+              </div>
+
+            </section>
+          </div>
+          <section class="tablet-price">
+            <section class="total">
+              <p>Total:</p>
+              <h2>{{ calculateTotals() }}</h2>
+            </section>
+            <a href="#">Go to Checkout</a>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>

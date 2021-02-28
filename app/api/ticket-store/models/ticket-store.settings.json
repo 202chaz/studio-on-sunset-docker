@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ticket_stores",
+  "info": {
+    "name": "ticket_store",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "event": {
+      "model": "event",
+      "via": "ticket_store"
+    },
+    "tickets": {
+      "via": "ticket_store",
+      "collection": "ticket"
+    }
+  }
+}

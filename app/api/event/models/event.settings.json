@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "time": {
+      "type": "time",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "artists": {
+      "via": "events",
+      "collection": "artist"
+    },
+    "ticket_store": {
+      "via": "event",
+      "model": "ticket-store"
+    },
+    "merch_store": {
+      "via": "event",
+      "model": "merch-store"
+    }
+  }
+}
