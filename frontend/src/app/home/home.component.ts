@@ -261,7 +261,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
       })
     }
-    console.log(this.selectedItems);
+    this.assetService.setCartItems(this.selectedItems);
     this.calculateTotals();
   }
 

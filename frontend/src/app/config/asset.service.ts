@@ -7,6 +7,7 @@ import { Observable, Subject } from 'rxjs';
 export class AssetService {
   private subject = new Subject<any>();
   private userStatus = new Subject<any>();
+  private cartItems = new Subject<any>();
 
   constructor() { }
 
@@ -18,11 +19,19 @@ export class AssetService {
     this.userStatus.next({ user });
   }
 
+  setCartItems(items: any) {
+    this.cartItems.next({ items })
+  }
+
   getAsset(): Observable<any> {
     return this.subject.asObservable();
   }
 
   getUserStatus(): Observable<any> {
     return this.userStatus.asObservable();
+  }
+
+  getCartItems(): Observable<any> {
+    return this.cartItems.asObservable();
   }
 }

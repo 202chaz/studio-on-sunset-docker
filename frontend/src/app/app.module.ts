@@ -12,6 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AccountComponent } from './account/account.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,17 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AccountComponent,
+    CheckoutComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxUsefulSwiperModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   providers: [
     ApiService

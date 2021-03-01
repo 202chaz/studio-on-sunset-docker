@@ -1,0 +1,334 @@
+<!-- Step 1 Shipping Details -->
+<main class='edit-card-main'>
+  <div class="left-col">
+    <form *ngIf="(step === 0 && shippingForm)" [formGroup]="shippingForm">
+      <section class="payment-information">
+        <h1>SHIPPING DETAILS</h1>
+        <div class="payment-data">
+          <h2>DELIVERY ADDRESS</h2>
+          <h3>Contact</h3>
+          <div class="delivery-contact">
+            <input type="text" placeholder="Full Name" formControlName="fullName" required>
+            <section class="phone">
+              <div>+1</div>
+              <input type="text" placeholder="Phone Number" class="phone" formControlName="phoneNumber" required>
+            </section>
+          </div>
+          <div class="address">
+            <h3>Address</h3>
+            <section class="address-form">
+              <div class='address-form-top'>
+                <input type="text" placeholder="Street, House/Apartment/Unit" formControlName="address1" required>
+                <input type="text" placeholder="Apt, Suite, Unit, etc. (Optional)" formControlName="address2">
+              </div>
+              <div class="address-form-bottom">
+                <section>
+                  <select name="country" id="country" formControlName="country" required>
+                    <option value="USA" id='option'>United States</option>
+                    <option value="Canada" id='option'>Canada</option>
+                  </select>
+                  <input type="text" placeholder="State/Province/Region" formControlName="state" required>
+                </section>
+                <section>
+                  <input type="text" placeholder="City" formControlName="city" required>
+                  <input type="text" placeholder="Postal Code" formControlName="zip" required>
+                </section>
+              </div>
+            </section>
+            <div class="save-address">
+              <p>
+                <input type="checkbox" id="c1" name="cb" formControlName="saveDetails">
+                <label for="c1">Save address details for future purchases</label>
+              </p>
+            </div>
+            <h2>SHIPPING METHOD</h2>
+            <div class="shipping-content">
+              <div class="method-cards">
+                <section class="m-card" (click)="clickEvent('standard')" [ngClass]="standard ? 'active' : ''">
+                  <h2>Standard Delivery</h2>
+                  <p>Usually in 5-7 working days</p>
+                  <p class='price'>$0.00</p>
+                </section>
+                <section class="m-card" (click)="clickEvent('express')" [ngClass]="express ? 'active' : ''">
+                  <h2>Express Delivery</h2>
+                  <p>Usually in 1-3 working days</p>
+                  <p class='price'>$20.00</p>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="save-continue i1">
+            <button class="formBtn" [disabled]="!shippingForm.valid" (click)="nextStep()">Save and Continue</button>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <form *ngIf="step === 1" [formGroup]="billingDetailsForm">
+      <section class="payment-information">
+        <h1>PAYMENT INFORMATION</h1>
+        <div class="payment-data">
+          <h2>SELECT A PAYMENT METHOD</h2>
+          <div class="payment-options">
+            <!--
+            <div class="option paypal">
+              <img src="/assets/paypal.svg" alt="paypal">
+              <p>PayPal</p>
+            </div> -->
+            <div class="option credit-card selected">
+              <img src="/assets/creditcard.svg" alt="credit card">
+              <p>Credit Card</p>
+            </div>
+          </div>
+          <div class="credit-card-selected">
+            <h3 class='enter-info'>Please enter your Credit Card information below</h3>
+            <div class="credit-card-form">
+              <label for="name-on-card">Name on Card</label>
+              <input type="text" name="name-on-card" formControlName="nameOnCard" required>
+              <label for="card-number">Card Number</label>
+              <input type="text" name="card-number" formControlName="cardNumber" required>
+
+              <div class="details">
+                <section>
+                  <label for="valid-until">Valid Until</label>
+                  <input type="text" placeholder="MM / YY" formControlName="validUntil" required>
+                </section>
+                <section>
+                  <label for="CVV">CVV</label>
+                  <input type="text" placeholder="* * *" formControlName="cvv" required>
+                </section>
+                <section>
+                  <label for="zip-code">Zip Code</label>
+                  <input type="text" placeholder="ZIP CODE" formControlName="zipCode" required>
+                </section>
+              </div>
+              <div class="save-address">
+                <p>
+                  <input type="checkbox" id="c1" name="cb" formControlName="saveCard">
+                  <label for="c1">Save this card on your profile for future purchases</label>
+                </p>
+              </div>
+            </div>
+            <div class="billing-details">
+              <h2>BILLING DETAILS</h2>
+              <div class="save-address use-same-billing">
+                <p (click)="hideBilling()">
+                  <input type="checkbox" name="agree-address" id="agree-address" #agree>
+                  <label for="agree-address" id="agree">Use the same details as address</label>
+                </p>
+              </div>
+              <div class="collapse-details" #billingDetails>
+                <h2>Contact</h2>
+                <section class="billing-top">
+                  <input type="text" placeholder="Full Name" formControlName="fullName" required>
+                  <input type="text" placeholder="Phone Number" formControlName="phoneNumber" required>
+                </section>
+                <h2 class='bb-add'>Address</h2>
+                <section class="billing-bottom">
+                  <div>
+                    <input type="text" placeholder="Street, House/Apartment/Unit" formControlName="address1" required>
+                    <input type="text" placeholder="Apt, Suite, Unit, etc. (Optional)" formControlName="address2">
+                  </div>
+                  <section>
+                    <div>
+                      <select name="country" id="country" formControlName="country" required>
+                        <option value="USA">United States</option>
+                        <option value="Canada">Canada</option>
+                      </select>
+                      <input type="text" placeholder="State/Province/Region" formControlName="state" required>
+                    </div>
+                    <div>
+                      <input type="text" placeholder="City" formControlName="city" required>
+                      <input type="text" placeholder="Postal Code" formControlName="zip" required>
+                    </div>
+                  </section>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="paypal-selected">
+            <h2>BILLING DETAILS</h2>
+            <div class="save-address information-provided">
+              <p>
+                <input type="checkbox" name="info-provided" id="info-provided">
+                <label for="info-provided" id="info">Information provided from registered PayPal account</label>
+              </p>
+            </div>
+          </div>
+          <div class="data-privacy">
+            <h2>DATA & PRIVACY</h2>
+            <p>
+              We do never intend to share your personal information with third parties. Your Data is <br> secure with us
+              and protected via <b>Symantec Data Secure</b>
+            </p>
+          </div>
+          <div class="save-continue i1">
+            <button class="formBtn" [disabled]="!billingDetailsForm.valid" (click)="nextStep()">Save and Continue</button>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <section class="payment-information" *ngIf="step === 2">
+      <h1>SUMMARY</h1>
+      <div class="payment-data">
+        <h2>DELIVERY ADDRESS</h2>
+
+        <div class="saved-details">
+          <h3>Standard Delivery</h3>
+          <div class="personal-info">
+            <section>
+              <h4>{{ shippingForm.value.fullName }}</h4>
+              <p>
+                {{ shippingForm.value.city }}, {{ shippingForm.value.country }} <br> {{ shippingForm.value.address1 }}, <br> +1 {{ shippingForm.value.phoneNumber }}
+              </p>
+            </section>
+            <section>
+              <a href="./checkout_1.html">
+                <img src="/assets/address-edit.svg" alt="edit"> Edit
+              </a>
+            </section>
+          </div>
+        </div>
+
+        <h2>PAYMENT METHOD</h2>
+        <div class="selected-card">
+          <img src="/assets/mastercard.svg" alt="mastercard">
+          <section>
+            <h2>{{ billingDetailsForm.value.nameOnCard }}</h2>
+            <p>**** 1234</p>
+          </section>
+        </div>
+
+        <a href="./checkout_2.html" id='change-pay-type'>
+          <img src="../assets/address-edit.svg" alt="edit"> Change
+        </a>
+
+        <div class="saved-details delivery">
+          <h3>Billing Details</h3>
+          <div class="personal-info">
+            <section>
+              <h4>{{ billingDetailsForm.value.nameOnCard }}</h4>
+              <p>
+                {{ billingDetailsForm.value.city }}, {{ billingDetailsForm.value.country }} <br> {{ billingDetailsForm.value.address1 }}, <br> +1 {{ billingDetailsForm.value.phoneNumber }}
+              </p>
+            </section>
+            <section>
+              <a href="./checkout_2.html">
+                <img src="../assets/address-edit.svg" alt="edit"> Edit
+              </a>
+            </section>
+          </div>
+        </div>
+
+        <div class="terms">
+          <h2>TERMS & CONDITIONS</h2>
+          <p>
+            By clicking the Complete Purchase button you agree that you have read and accept the <br> <a href="#">Purchase
+              Conditions
+            </a> and understand the <a href="#">Privacy and Cookies Policy</a>
+          </p>
+        </div>
+        <div class="save-continue i1">
+          <a href="./order_success.html">Complete Purchase</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="right-col">
+    <h1>ORDER DETAILS</h1>
+    <section class="cart-info">
+      <section class="num-items">
+        <p>2 Items</p>
+        <img src="../assets/trash.svg" alt="trash can">
+      </section>
+      <section class="cart-tickets">
+        <h3>Ticket/s</h3>
+        <div class="ticket-item">
+          <section>
+            <img src="../assets/remove-line.svg" alt="x">
+          </section>
+          <img src="../assets/harry-styles@2x.png" alt="harry styles">
+          <div>
+            <h4>Harry Styles</h4>
+            <p>Fine Line</p>
+            <span class="date">15 Dec 2020 Fri 9pm EDT</span>
+            <h4>$ 80.00</h4>
+            <label for="ticketType">Ticket type:</label> <br>
+            <p class="ticket-selection">
+              Multi View Stream
+            </p>
+            <!-- <select name="ticketType" id="ticketType">
+              <option value="multi">Multi View Stream</option>
+              <option value="basic">Basic Stream</option>
+              <option value="vip">VIP Stream</option>
+            </select> -->
+          </div>
+        </div>
+        <h3 class="merch-title">Merch</h3>
+        <div class="merch-item">
+          <section>
+            <img src="../assets/remove-line.svg" alt="x">
+          </section>
+          <img src="../assets/newShirt.png" alt="harry styles tshirt">
+          <div class='right-con'>
+            <p>Harry Styles Fine Line <br> T-Shirt</p>
+            <div class="sizes">
+              <div class='form'>
+                <div class="form-item">
+                  <label for="size">Size</label>
+                  <p class="selection-size">XL</p>
+                  <!-- <select name="size" id="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="XL">XL</option>
+                    <option value="L" selected>L</option>
+                  </select> -->
+                </div>
+                <div class="form-item">
+                  <label for="cty">QTY</label>
+                  <p class="selection-qty">1</p>
+                  <!-- <select name="size" id="size">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select> -->
+                </div>
+              </div>
+              <div class="sizes-price">
+                <h4>$ 30.00</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="totals">
+        <section class="sub-row">
+          <p>Subtotal</p>
+          <h4>$ 110.00</h4>
+        </section>
+        <section class="sub-row">
+          <p>Service Fee</p>
+          <h4>$ 15.00</h4>
+        </section>
+        <section class="sub-row">
+          <p>Shipping</p>
+          <h4>$ 0.00</h4>
+        </section>
+        <section class="sub-row total">
+          <p>Total</p>
+          <h4>$ 125.00</h4>
+        </section>
+        <span class="tax-included">
+          Price including Tax
+        </span>
+      </div>
+      <div class="tablet-continue">
+        <a href="./checkout_2.html">Save and Continue</a>
+      </div>
+    </section>
+  </div>
+</main>

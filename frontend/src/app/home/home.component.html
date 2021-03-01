@@ -43,7 +43,7 @@
                 <button class="share">
                   <img src="/assets/share.svg" alt="share"> Share
                 </button>
-                <button class="ticket">
+                <button class="ticket" (click)="showModal()">
                   <img src="/assets/black-ticket.svg" alt="ticket"> Get Ticket
                 </button>
               </section>
@@ -84,7 +84,7 @@
                 <p>Total:</p>
                 <h2>{{ calculateTotals() | currency: 'USD' }}</h2>
               </section>
-              <a href="#">Go to Checkout</a>
+              <a routerLink="/account/checkout">Go to Checkout</a>
             </section>
           </div>
           <div class="ticket-right">
