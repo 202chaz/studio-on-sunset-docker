@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
-
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   border: 0;
   padding: 0;
@@ -12,7 +11,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
 }
 
 /* Track */
@@ -34,8 +33,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1a2030;
-  color: white;
 }
 
 html,
@@ -64,7 +61,7 @@ h2 {
 
 @media (max-width: 1450px) {
   h2 {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -79,4 +76,18 @@ h3 {
     margin: 15px 0;
     font-size: 13px;
   }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #1a2030;
+  color: white;
+}
+
+.scrolled {
+  background: #1a2030;
+}
+
+.swiper-container, swiper {
+  width: 100% !important;
 }

@@ -35,4 +35,14 @@ export class ApiService {
   registerUser(options) {
     return this.http.post(`${this.url}/auth/local/register`, options);
   }
+
+  getFloatRates() {
+    // http://www.floatrates.com/daily/usd.json
+    return this.http.get('http://www.floatrates.com/daily/usd.json');
+  }
+
+  getCommonCurrency() {
+    // https://gist.githubusercontent.com/Fluidbyte/2973986/raw/8bb35718d0c90fdacb388961c98b8d56abc392c9/Common-Currency.json
+    return this.http.get('https://gist.githubusercontent.com/Fluidbyte/2973986/raw/8bb35718d0c90fdacb388961c98b8d56abc392c9/Common-Currency.json');
+  }
 }

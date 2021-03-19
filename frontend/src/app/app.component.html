@@ -1,4 +1,4 @@
-<div class="main-container" #container [ngStyle]="{'background-image': setBG()}">
+<div class="main-container" #container [ngStyle]="{'background-image': setBG()}" (window:scroll)="onWindowScroll($event)">
   <app-nav></app-nav>
   <router-outlet></router-outlet>
 </div>

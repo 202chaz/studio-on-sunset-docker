@@ -45,8 +45,8 @@
       "required": true
     },
     "events": {
-      "collection": "event",
       "via": "artists",
+      "collection": "event",
       "dominant": true
     },
     "type": {

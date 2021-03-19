@@ -1,0 +1,836 @@
+<main class='live-main'>
+  <div class="live-left">
+    <section class="live-feed">
+      <img src="./assets/play-button-arrowhead.svg" alt="play btn">
+    </section>
+    <section class="event-details">
+      <div class="artist-name">
+        <h1>Katy Perry</h1>
+        <span class="live-now-red">
+          Live Now
+        </span>
+      </div>
+      <h3>American Idol Finale 2020</h3>
+    </section>
+
+    <section class="tab-sec tab-hide">
+      <div class="tab web-tabs">
+        <button class="tablinks selected merchBTN" (click)="tabSelector($event, 'Merch', 0)">Merch</button>
+        <button class="tablinks" (click)="tabSelector($event, 'ShowInfo', 1)">Info</button>
+        <button class="tablinks" (click)="tabSelector($event, 'Bio', 2)">Artist</button>
+      </div>
+
+      <div id="Merch" class="tabcontent" #Merch>
+        <div class="item">
+          <img src="./assets/grey-sweater.png" alt="grew crewneck">
+          <p>Grey Crewneck with thread stitches</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/white-sweater.png" alt="white sweater">
+          <p>Cropped Hoodie</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 45.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/black-shirt.png" alt="smiley shirt">
+          <p>T-shirt with print</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 25.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/blue-sweater.png" alt="blue sweater">
+          <p>Blue Crewneck</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/poster.png" alt="Smile Pin Set">
+          <p>Smile Pin Set</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 40.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/black-cap.png" alt="black cap">
+          <p>Smile Hat</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/record.png" alt="vinyl">
+          <p>Smile Standard Vinyl</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+
+      </div>
+
+      <div id="ShowInfo" class="tabcontent" #ShowInfo style="display: none">
+        <p>Harry Styles takes the virtual stage in this incredible livestream concert of Fine Line, his second solo album,
+          with warm, romantic rhythms that get you all stirred-up.</p>
+      </div>
+
+      <div id="Bio" class="tabcontent" #Bio style="display: none">
+        <p>Bio stuff.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="live-right">
+    <div class="tabs">
+      <button class="merch-btn" (click)="setTab('merch')"><img src="./assets/grey-shop.svg" alt="chat"></button>
+      <button class="chat active" (click)="setTab('chat')"><img src="./assets/red-chat.svg" alt="chat"></button>
+      <button class="group" (click)="setTab('rooms')"><img src="./assets/grey-group.svg" alt="group"></button>
+      <button class="cart" (click)="setTab('cart')"><img src="./assets/grey-cart.svg" alt="cart"></button>
+    </div>
+
+    <div class="merch-tab" #merchTab>
+      <section class="title">
+        <h1>Merch Shopping</h1>
+      </section>
+      <section class="merch-tab-content">
+        <div class="item">
+          <img src="./assets/grey-sweater.png" alt="grew crewneck">
+          <p>Grey Crewneck with thread stitches</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/white-sweater.png" alt="white sweater">
+          <p>Cropped Hoodie</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 45.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/black-shirt.png" alt="smiley shirt">
+          <p>T-shirt with print</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 25.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/blue-sweater.png" alt="blue sweater">
+          <p>Blue Crewneck</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="SIZE">SIZE</label>
+                <select name="size" id="size">
+                  <option value="S">S</option>
+                  <option value="M" selected>M</option>
+                  <option value="L">L</option>
+                  <option value="LX">LX</option>
+                </select>
+              </div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/poster.png" alt="Smile Pin Set">
+          <p>Smile Pin Set</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 40.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/black-cap.png" alt="black cap">
+          <p>Smile Hat</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+        <div class="item">
+          <img src="./assets/record.png" alt="vinyl">
+          <p>Smile Standard Vinyl</p>
+          <section class="num-items">
+            <div>
+              <div class="pick">
+                <label for="qty">QTY</label>
+                <select name="qty" id="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <h4>$ 30.00</h4>
+          </section>
+          <a href="#">Add to Cart</a>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="chat-tab" #chatTab>
+      <section class="title">
+        <h1>Live Chat</h1>
+      </section>
+
+      <section class="chat-view">
+        <div class="talk">
+          <img src="./assets/chat-girl.png" alt="girl with glasses">
+          <section class="details">
+            <section class="person">
+              <h3>Tammy</h3>
+              <p>5 minutes ago</p>
+            </section>
+            <section class="quote">
+              <p>I've been waiting for this for a long time :))</p>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <section class="type">
+        <input type="text" placeholder="Type your message">
+        <section class="btns">
+          <button class="emoji"><img src="./assets/smile.svg" alt="pick emoji"></button>
+          <button class="send"><img src="./assets/send.svg" alt="send message"></button>
+        </section>
+      </section>
+    </div>
+
+    <div class="group-tab" #roomsTab>
+      <section class="title">
+        <h1>Friends' Room</h1>
+      </section>
+
+      <section class="friends">
+        <div class="f-row">
+          <section class="person">
+            hcogan
+          </section>
+          <section class="person">
+            chaz
+          </section>
+        </div>
+        <div class="f-row">
+          <section class="person">
+            florenc
+          </section>
+          <section class="person">
+            daniel
+          </section>
+        </div>
+      </section>
+
+      <section class="create-room">
+        <a href="#" class='new-room'>Create a Room</a>
+        <p id='or'>Or</p>
+        <h3>Join a Room</h3>
+        <p id='enter'>Enter the Verification Code</p>
+        <section class="input-code">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+          <input type="text" maxlength="1">
+        </section>
+        <a href="#" id='join'>Join Room</a>
+      </section>
+    </div>
+
+    <div class="cart-tab" #cartTab>
+      <section class="title cart-title">
+        <h1 class='shop-title'>Shopping Cart</h1>
+        <section class="total-items">
+          <p>2 Items</p>
+          <img src="./assets/trash.svg" alt="trash can">
+        </section>
+      </section>
+
+      <section class="cart-items">
+        <div class="item">
+          <section class="delete">
+            <p>X</p>
+          </section>
+          <section class="item-details">
+            <img src="./assets/live-shirt.png" alt="shirt">
+            <section class="id-right">
+              <h4>T-shirt with print</h4>
+              <div>
+                <div class="pick">
+                  <label for="SIZE">SIZE</label>
+                  <select name="size" id="size" disabled>
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="LX">LX</option>
+                  </select>
+                </div>
+                <div class="pick">
+                  <label for="qty">QTY</label>
+                  <select name="qty" id="qty" disabled>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section class="item-total">
+            <h4>$ 25.00</h4>
+          </section>
+        </div>
+        <div class="item">
+          <section class="delete">
+            <p>X</p>
+          </section>
+          <section class="item-details">
+            <img src="./assets/live-shirt.png" alt="shirt">
+            <section class="id-right">
+              <h4>T-shirt with print</h4>
+              <div>
+                <div class="pick">
+                  <label for="SIZE">SIZE</label>
+                  <select name="size" id="size" disabled>
+                    <option value="S">S</option>
+                    <option value="M" selected>M</option>
+                    <option value="L">L</option>
+                    <option value="LX">LX</option>
+                  </select>
+                </div>
+                <div class="pick">
+                  <label for="qty">QTY</label>
+                  <select name="qty" id="qty" disabled>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section class="item-total">
+            <h4>$ 25.00</h4>
+          </section>
+        </div>
+      </section>
+
+      <section class="delivery-address checkoutP1">
+        <button class='gback'><img src="./assets/chevron-left.svg" alt="arrow"> Go back</button>
+        <h1>DELIVERY ADDRESS</h1>
+
+        <div class="contact-form">
+          <h2>Contact</h2>
+          <input type="text" placeholder="Full Name">
+          <section class="phone">
+            <div>+ 1</div>
+            <input type="text" placeholder="Phone Number">
+          </section>
+        </div>
+
+        <div class="address-form">
+          <h2>Address</h2>
+          <input type="text" placeholder="Street, House/Apartment/Unit">
+          <input type="text" placeholder="Apt, Suite, Unit, etc. (Optional)">
+          <select name="country" id="country">
+            <option value="United States">United States</option>
+          </select>
+          <input type="text" placeholder="State/Province/Region">
+          <input type="text" placeholder="City">
+          <input type="text" placeholder="Postal Code">
+        </div>
+
+        <div class="ship-method">
+          <h1>SHIPPING METHOD</h1>
+          <div class="sm-box active">
+            <h3>Standard Delivery</h3>
+            <p>Usually in 5-7 working days</p>
+            <p class="price">$0.00</p>
+          </div>
+
+          <div class="sm-box">
+            <h3>Express Delivery</h3>
+            <p>Usually in 1-3 working days</p>
+            <p class="price">$20.00</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="delivery-address checkoutP3">
+        <button class='gback'><img src="./assets/chevron-left.svg" alt="arrow"> Go back</button>
+        <h1>SELECT A PAYMENT METHOD</h1>
+
+        <div class="ppal-or-cc">
+          <button class="paypal liveActive">
+            <img src="./assets/paypal.svg" alt="paypal"> PayPal
+          </button>
+          <button class="cc">
+            <img src="./assets/creditcard.svg" alt="creditcard"> Credit Card
+          </button>
+        </div>
+
+        <div class="billing-details">
+          <h1>BILLING DETAILS</h1>
+          <section class="check">
+            <label>
+              <input type="checkbox" name="save-card" value="css" />
+              <span>Information provided from registered PayPal account</span>
+            </label>
+          </section>
+        </div>
+
+        <div class="cc-form">
+          <h3>Please enter your card information below</h3>
+          <h2>NAME ON CARD</h2>
+          <input type="text">
+          <h2>CARD NUMBER</h2>
+          <input type="text">
+          <section class="cc-row">
+            <div>
+              <h2>VALID UNTIL</h2>
+              <input type="text" placeholder="MM / YY">
+            </div>
+            <div class="cvv">
+              <h2>CVV</h2>
+              <input type="text" placeholder="* * *">
+            </div>
+            <div>
+              <h2>ZIP CODE</h2>
+              <input type="text" placeholder="-----">
+            </div>
+          </section>
+          <section class="check">
+            <label>
+              <input type="checkbox" name="save-card" value="css" />
+              <span>Save this card on your profile for future purchases</span>
+            </label>
+          </section>
+
+          <h1>BILLING DETAILS</h1>
+          <section class="check">
+            <label>
+              <input type="checkbox" name="save-address" value="css" id="save-address" />
+              <span>Use the same details as address</span>
+            </label>
+          </section>
+          <section class="not-saved">
+            <h2 class="contact">Contact</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="Phone Number">
+            <h2>Address</h2>
+            <input type="text" placeholder="Street, House/Apartment/Unit">
+            <input type="text" placeholder="Apt, Suite, Unit, etc.. (Optional)">
+            <select name="country" id="country">
+              <option value="USA">United States</option>
+            </select>
+            <input type="text" placeholder="City">
+            <input type="text" placeholder="State/Province/Region">
+            <input type="text" placeholder="Postal Code">
+          </section>
+        </div>
+
+        <div class="data-and-privacy">
+          <h1>DATA & PRIVACY</h1>
+          <p>
+            We do never intend to share your personal information with third parties. Your Data is secure with us and protected via <a
+              href="#">Symantec Data Secure</a>
+          </p>
+        </div>
+
+
+      </section>
+
+      <section class="delivery-address paypal-selected">
+        <button class='gback'><img src="./assets/chevron-left.svg" alt="arrow"> Go back</button>
+
+        <h1>DELIVERY ADDRESS</h1>
+
+        <div class="saved-details">
+          <h3>Standard Delivery</h3>
+          <div class="personal-info">
+            <section>
+              <h4>Harrison Cogan</h4>
+              <p>
+                New York, US <br> 12345 Brooklyn, <br> +1 234 234 234
+              </p>
+            </section>
+            <section>
+              <a href="./checkout_1.html">
+                <img src="./assets/address-edit.svg" alt="edit"> Edit
+              </a>
+            </section>
+          </div>
+        </div>
+
+        <h1>PAYMENT METHOD <span class="change-method"><img src="./assets/address-edit.svg" alt="edit"> Edit</span></h1>
+
+        <img src="./assets/paypal-seeklogo.com.svg" class='payment-logo' alt="paypal">
+
+        <div class="saved-details">
+          <h3>Billing Details</h3>
+          <div class="personal-info">
+            <section>
+              <h4>Information provided from registered PayPal account</h4>
+            </section>
+          </div>
+        </div>
+
+        <div class="terms">
+          <h1>TERMS & CONDITIONS</h1>
+          <p>By clicking the Complete Purchase button, you agree that you have read and accepted <a href="#">Purchase Conditions</a>
+            and understand the <a href="#">Privacy and Cookies Policy</a></p>
+        </div>
+      </section>
+
+      <section class="delivery-address cc-selected">
+        <button class='gback'><img src="./assets/chevron-left.svg" alt="arrow"> Go back</button>
+
+        <h1>DELIVERY ADDRESS</h1>
+
+        <div class="saved-details">
+          <h3>Standard Delivery</h3>
+          <div class="personal-info">
+            <section>
+              <h4>Harrison Cogan</h4>
+              <p>
+                New York, US <br> 12345 Brooklyn, <br> +1 234 234 234
+              </p>
+            </section>
+            <section>
+              <a href="./checkout_1.html">
+                <img src="./assets/address-edit.svg" alt="edit"> Edit
+              </a>
+            </section>
+          </div>
+        </div>
+
+        <h1>PAYMENT METHOD <span class="change-method"><img src="../assets/address-edit.svg" alt="edit"> Edit</span></h1>
+
+        <img src="./assets/mastercard.svg" class='payment-logo mastercard' alt="paypal">
+
+        <div class="saved-details">
+          <h3>Billing Details</h3>
+          <div class="personal-info">
+            <section>
+              <h4>Harrison Cogan</h4>
+              <p>
+                New York, US <br> 12345 Brooklyn, <br> +1 234 234 234
+              </p>
+            </section>
+            <section>
+              <a href="./checkout_1.html">
+                <img src="./assets/address-edit.svg" alt="edit"> Edit
+              </a>
+            </section>
+          </div>
+        </div>
+
+        <div class="terms">
+          <h1>TERMS & CONDITIONS</h1>
+          <p>By clicking the Complete Purchase button, you agree that you have read and accepted <a href="#">Purchase Conditions</a>
+            and understand the <a href="#">Privacy and Cookies Policy</a></p>
+        </div>
+      </section>
+
+      <section class="order-success">
+        <section class="order-t">
+          <img src="./assets/yellow-checkmark.svg" alt="checkmark">
+          <h1>YOU'VE GOT IT!</h1>
+          <p class="sub-title">You will get a confirmation email shortly with the attached invoice.</p>
+          <a href="#" class="view">VIEW PURCHASE</a>
+        </section>
+
+
+        <section class="order-b">
+          <b>Order #45HC91223A</b>
+          <p>A tracking number will be provided to you as soon as we ship the merch products.</p>
+          <button>Return to Chat</button>
+        </section>
+      </section>
+
+      <section class="totals">
+        <section class="breakdown">
+          <div class="t-row uno">
+            <p>Subtotal</p>
+            <b>$ 110.00</b>
+          </div>
+          <div class="t-row dos">
+            <p>Service fee</p>
+            <b>$ 15.00</b>
+          </div>
+          <div class="t-row tres">
+            <p>Shipping & Handling</p>
+            <b>$ 0.00</b>
+          </div>
+        </section>
+        <div class="final-total">
+          <p>Total</p>
+          <section>
+            <h2>$ 125.00</h2>
+            <span>Price including Tax</span>
+          </section>
+        </div>
+        <button class="save-continue-checkout scc1">Save and Continue</button>
+        <button class="save-continue-checkout scc2">Save and Continue</button>
+        <button class="save-continue-checkout scc3">Continue Purchase with PayPal</button>
+        <button class="save-continue-checkout scc4">Save and Continue</button>
+        <button class="save-continue-checkout scc5">Complete Purchase</button>
+      </section>
+    </div>
+  </div>
+
+  <section class="tablet-tabs">
+    <section class="btns">
+      <button id="tablet-info" class="active-tablet">Info</button>
+      <button id="tablet-bio">Artist</button>
+    </section>
+    <section class="tablet-info-content">
+      <p>Harry Styles takes the virtual stage in this incredible livestream concert of Fine Line, his second solo album,
+        with warm, romantic rhythms that get you all stirred-up.</p>
+    </section>
+    <section class="tablet-bio-content">
+      <p>Bio bio bio</p>
+    </section>
+  </section>
+</main>

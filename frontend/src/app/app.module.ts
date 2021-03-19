@@ -15,6 +15,13 @@ import { SignupComponent } from './signup/signup.component';
 import { AccountComponent } from './account/account.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MyTicketsComponent } from './my-tickets/my-tickets.component';
+import { PastShowsComponent } from './past-shows/past-shows.component';
+import { LiveNowComponent } from './live-now/live-now.component';
+import { ReplayStoreComponent } from './replay-store/replay-store.component';
+import { PurchaseReplayComponent } from './purchase-replay/purchase-replay.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +34,20 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     AccountComponent,
     CheckoutComponent,
     OrderDetailsComponent,
+    GalleryComponent,
+    ProfileComponent,
+    MyTicketsComponent,
+    PastShowsComponent,
+    LiveNowComponent,
+    ReplayStoreComponent,
+    PurchaseReplayComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxUsefulSwiperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     ApiService

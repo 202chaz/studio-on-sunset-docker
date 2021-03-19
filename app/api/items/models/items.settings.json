@@ -43,6 +43,10 @@
     "price": {
       "type": "decimal",
       "required": true
+    },
+    "merch_store": {
+      "model": "merch-store",
+      "via": "items"
     }
   }
 }

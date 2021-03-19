@@ -1,0 +1,181 @@
+<main class='replay-main r-mobile'>
+  <div class="sub-menu m-hide">
+    <h1>Replay Store</h1>
+    <section class="search">
+      <input type="text" placeholder='Try "Harry Styles"'>
+      <!-- <img src="./images/search.svg" alt="search"> -->
+    </section>
+    <a href="./recentlyAdded.html"> Recently Added </a>
+    <a href="./trending.html"> Trending </a>
+    <a href="./hiphop.html"> Hip Hop </a>
+    <a href="./pop.html"> Pop </a>
+    <a href="./indie.html"> Indie </a>
+    <a href="./country.html"> Country </a>
+  </div>
+  <div class="artist-grid">
+    <div class="top-menu">
+      <h1>Replay Store</h1>
+      <input type="text" placeholder='Try "Harry Styles"'>
+      <select name="category" id="category" onChange="window.location.href=this.value">
+        <option value="" hidden>Select Category</option>
+        <option value="./recentlyAdded.html">Recently Added</option>
+        <option value="./trending.html">Trending</option>
+        <option value="./hiphop.html">Hip Hop</option>
+        <option value="./pop.html">Pop</option>
+        <option value="./indie.html">Indie</option>
+        <option value="./country.html">Country</option>
+      </select>
+      <section>
+        <a href="./recentlyAdded.html"> Recently Added </a>
+        <a href="./trending.html"> Trending </a>
+        <a href="./hiphop.html"> Hip Hop </a>
+        <a href="./pop.html"> Pop </a>
+        <a href="./indie.html"> Indie </a>
+        <a href="./country.html"> Country </a>
+      </section>
+    </div>
+    <section class="a-row recently-added">
+      <section class="row-details">
+        <h3>Recently Added</h3>
+      </section>
+      <section class="row-artists dragscroll">
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Selena Gomez</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Show title</h3>
+            <h2>Bruno Mars</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>The Lover Experience</h3>
+            <h2>Taylor Swift</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Harry Styles</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Selena Gomez</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+      </section>
+    </section>
+    <section class="a-row trending">
+      <section class="row-details">
+        <h3>Trending</h3>
+      </section>
+      <section class="row-artists dragscroll">
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Selena Gomez</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Show title</h3>
+            <h2>Bruno Mars</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>The Lover Experience</h3>
+            <h2>Taylor Swift</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Harry Styles</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Selena Gomez</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+      </section>
+    </section>
+    <section class="a-row hip-hop">
+      <section class="row-details">
+        <h3>Recently Added</h3>
+      </section>
+      <section class="row-artists dragscroll">
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Selena Gomez</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Show title</h3>
+            <h2>Bruno Mars</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>The Lover Experience</h3>
+            <h2>Taylor Swift</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Harry Styles</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+        <div class="artist">
+          <img src="./assets/harry-styles@2x.png" alt="harry styles">
+          <section class="ra-details">
+            <h3>Fine Line</h3>
+            <h2>Selena Gomez</h2>
+            <button class='purchase-replay' (click)="purchaseReplay()">Purchase Replay</button>
+          </section>
+        </div>
+      </section>
+    </section>
+  </div>
+</main>
+
+<a href="./purchaseReplay.html" class='purchase-helper' style='visibility: hidden;'>helper</a>

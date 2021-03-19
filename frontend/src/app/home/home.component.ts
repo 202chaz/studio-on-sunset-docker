@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { SwiperOptions } from 'swiper';
 import { ApiService } from '../config/api.service';
 import { AssetService } from '../config/asset.service';
 import * as moment from 'moment';
@@ -31,75 +30,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public showDate: any;
   public qty = [0, 1, 2, 3, 4];
   mobileView: boolean;
-
-  config: SwiperOptions = {
-    autoHeight: true,
-    loop: true,
-    mousewheel: {
-      releaseOnEdges: true
-    },
-    freeMode: true,
-    breakpoints: {
-      3440: {
-        slidesPerView: 13.4,
-        spaceBetween: -50
-      },
-      2560: {
-        slidesPerView: 9,
-        spaceBetween: -50
-      },
-      1950: {
-        slidesPerView: 6.6,
-        spaceBetween: -40
-      },
-      1920: {
-        slidesPerView: 6.8,
-        spaceBetween: -50
-      },
-      1500: {
-        slidesPerView: 6.8,
-        spaceBetween: -50
-      },
-      1450: {
-        slidesPerView: 7.05,
-        spaceBetween: -10
-      },
-      1440: {
-        slidesPerView: 7.05,
-        spaceBetween: -10
-      },
-      1367: {
-        slidesPerView: 7.05,
-        spaceBetween: -10
-      },
-      1024: {
-        slidesPerView: 7.05,
-        spaceBetween: -10
-      },
-      768: {
-        slidesPerView: 7.05,
-        spaceBetween: -10
-      },
-
-      501: {
-        slidesPerView: 7.05,
-        spaceBetween: -10
-      },
-      500: {
-        slidesPerView: 2.4,
-        spaceBetween: -10
-      },
-      400: {
-        slidesPerView: 2,
-        spaceBetween: 10
-      }
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    spaceBetween: 40
-  };
 
   constructor(private api: ApiService, private assetService: AssetService) {
     this.mobileView = true;
@@ -172,8 +102,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getAllTickets()
-    this.getItems();
+    // this.getAllTickets()
+    // this.getItems();
   }
 
   ngAfterViewInit() {}
@@ -196,14 +126,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.main.merch_store.items.map(item => {
             this.merchData.map(m => {
               if (m.id === item) {
-                merchs.push(m)
+                merchs.push(m);
               }
-            })
+            });
           });
           this.availableMerchandise = merchs.sort((a, b) => a.type.localeCompare(b.type));
         }
       }
-    )
+    );
   }
 
   getAllTickets() {
@@ -215,12 +145,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.main.ticket_store.tickets.map(ticket => {
             this.ticketData.map(t => {
               if (t.id === ticket) {
-                tickets.push(t)
+                tickets.push(t);
               }
-            })
+            });
           });
           this.availableTickets = tickets.sort((a, b) => a.name.localeCompare(b.name));
           this.selectedTicket = this.availableTickets.find((t) => t.name === 'Basic Stream');
+          this.selectedItems.push({item: this.selectedTicket, price: this.selectedTicket.price, quantity: 1});
         }
       }
     );
@@ -253,15 +184,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.selectedItems.splice(0, 1);
         }
       });
-      this.selectedItems.push({item, quantity: value, amount: item.price * value})
+      this.selectedItems.push({item, quantity: value, price: item.price * value});
     } else {
       const query = this.selectedItems.map((i, index) => {
         if (i.item.id === item.id) {
           this.selectedItems.splice(index, 1);
         }
-      })
+      });
     }
     this.assetService.setCartItems(this.selectedItems);
+    console.log(this.selectedItems);
     this.calculateTotals();
   }
 
@@ -270,18 +202,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     const header = this.header.nativeElement;
     const upcoming = this.upcoming.nativeElement;
     modal.style.visibility = 'visible';
+    modal.style.display = 'revert';
     header.style.visibility = 'hidden';
     upcoming.style.visibility = 'hidden';
+    console.log(modal);
   }
 
   calculateTotals() {
     if (this.selectedTicket) {
       const merchTotals = this.selectedItems.reduce((a, b) => {
-        return a + b.amount;
+        return a + b.price;
       }, 0);
-      const salesTotal = this.selectedTicket.price + merchTotals;
-      return salesTotal;
+      return merchTotals;
     }
-
   }
 }

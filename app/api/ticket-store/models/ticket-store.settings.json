@@ -11,12 +11,7 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "event": {
-      "model": "event",
-      "via": "ticket_store"
-    },
     "tickets": {
-      "via": "ticket_store",
       "collection": "ticket"
     }
   }

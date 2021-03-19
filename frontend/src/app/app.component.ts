@@ -1,4 +1,4 @@
-import { Component,ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AssetService } from './config/asset.service';
@@ -17,7 +17,16 @@ export class AppComponent {
   constructor(private router: Router, private assetService: AssetService) {
     this.assetService.getAsset().subscribe(
       data => this.backgroundUrl = `${environment.api}${data.asset.artists[0].backgroundImage.url}`
-    )
+    );
+  }
+
+  onWindowScroll(event) {
+    const nav = document.getElementById('nav');
+    if (window.pageYOffset > 0) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
   }
 
   setBG() {

@@ -1,1 +1,20 @@
-<p>login works!</p>
+<nav>
+  <section class="nav-links">
+    <a (click)="prevPage()" class="backbtn">&larr; Back to previous page</a>
+  </section>
+</nav>
+
+<main class='login-main'>
+  <img src="./assets/newstlogo.svg" alt="login sos logo">
+  <div class="login-form">
+    <h2>Log in with your email</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Email" class="email" (input)="val()" #email formControlName="identifier" required>
+      <input type="password" class="password" (input)="val()" placeholder="password" *ngIf="showPasswordField" #password formControlName="password" required>
+      <button class="login-continue" type="submit" [disabled]="!loginForm.valid" #ctnBtn>
+        Continue
+      </button>
+    </form>
+    <span>Don't have an account? <a href="/signup">Sign Up</a></span>
+  </div>
+</main>

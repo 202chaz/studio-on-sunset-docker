@@ -22,10 +22,6 @@
     },
     "price": {
       "type": "decimal"
-    },
-    "ticket_store": {
-      "model": "ticket-store",
-      "via": "tickets"
     }
   }
 }

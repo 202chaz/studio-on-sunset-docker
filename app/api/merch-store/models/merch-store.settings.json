@@ -15,11 +15,8 @@
       "type": "string",
       "required": true
     },
-    "event": {
-      "model": "event",
-      "via": "merch_store"
-    },
     "items": {
+      "via": "merch_store",
       "collection": "items"
     }
   }

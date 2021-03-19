@@ -23,7 +23,7 @@
     "moment": "^2.29.1",
     "ngx-useful-swiper": "^10.0.1",
     "rxjs": "~6.6.6",
-    "swiper": "^6.4.15",
+    "swiper": "^6.5.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.1"
   },

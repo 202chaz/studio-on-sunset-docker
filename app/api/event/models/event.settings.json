@@ -30,15 +30,13 @@
       "required": true
     },
     "artists": {
-      "via": "events",
-      "collection": "artist"
+      "collection": "artist",
+      "via": "events"
     },
     "ticket_store": {
-      "via": "event",
       "model": "ticket-store"
     },
     "merch_store": {
-      "via": "event",
       "model": "merch-store"
     }
   }

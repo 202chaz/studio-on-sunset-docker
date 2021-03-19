@@ -1,111 +1,217 @@
+<div class="gradient"></div>
+
 <main class="home-container">
-    <header #header>
-      <div class="head-left">
-        <h1>{{ main?.artists[0]?.name }}</h1>
-        <h2>{{ main?.title }}</h2>
-        <div class="main-summary">
-          <p>{{ main?.artists[0]?.description }}</p>
-        </div>
-        <section class="date-duration">
-          <p class="date"><img src="/assets/calendar.svg"> {{ getEventDate(main) }}</p>
-          <p class="duration"><img src="/assets/clock.svg"> 1h 20min
-          </p>
-        </section>
-        <section class="next-prev">
-          <button class="next"><img src="/assets/Arrow-left.svg" alt="left"></button>
-          <button class="prev"><img src="/assets/Arrow-right.svg" alt="right"></button>
-        </section>
+  <header #header>
+    <div class="head-left">
+      <h1>Harry Styles</h1>
+      <h2>Fine Line</h2>
+      <p>Harry Styles takes the virtual stage in this incredible <br> livestream concert of Fine Line, his second solo
+        album,
+        <br> with warm, romantic rhythms that get you all stirred-up.</p>
+      <section class="date-duration">
+        <p class="date"><img src="./assets/calendar.svg"> 15 Dec 2020, Fri 9pm EDT</p>
+        <p class="duration"><img src="./assets/clock.svg"> 1h 20min
+        </p>
+      </section>
+      <!-- <section class="next-prev">
+        <button class="next"><img src="./assets/Arrow-left.svg" alt="left"></button>
+        <button class="prev"><img src="./assets/Arrow-right.svg" alt="right"></button>
+      </section> -->
+    </div>
+    <div class="head-right">
+      <div class="get-tickets">
+        <h1>15</h1>
+        <h2>Dec 2020 FRI 9pm EST</h2>
+        <button id='getTicket' (click)="showModal()"><img src="./assets/black-ticket.svg" alt="ticket"> Get Ticket</button>
       </div>
-      <div class="head-right">
-        <div class="get-tickets">
-          <h1>{{ getDay(main) }}</h1>
-          <h2>{{ headlineDate(main) }}</h2>
-          <button id='getTicket' (click)="showModal()"><img src="/assets/black-ticket.svg" alt="ticket"> Get Ticket</button>
+    </div>
+  </header>
+
+  <div class="upcoming" #upcoming>
+    <h1>Upcoming Shows</h1>
+    <app-gallery></app-gallery>
+  </div>
+
+  <div class="ticket-modal-container" #ticketModalContainer>
+    <div class="ticket-modal">
+      <section class="ticket-modal-row">
+        <div class="ticket-left">
+          <h1>Harry Styles</h1>
+          <h2>Fine Line</h2>
+          <section class="date-duration">
+            <p class="date"><img src="./assets/calendar.svg"> 15 Dec 2020, Fri 9pm EDT</p>
+            <p class="duration"><img src="./assets/clock.svg"> 1h 20min
+            </p>
+          </section>
+          <section class="preview">
+            <img src="./assets/yellow-play-btn.svg">
+            <span>Preview</span>
+          </section>
+          <section class="detail-description">
+            <span>Show all</span>
+            <details>
+              <summary>
+                Johnny will be streaming the It’s Never Really Over virtual world tour on Moment House, giving fans a unique live experience
+                across 13 tour dates. Watch Johnny perform from Toronto’s Danforth Music Hall, in a one hour fully produced
+                concert that will have fans dancing in their homes across the world. Performing his sophomore EP It’s Never
+                Really Over for the first time ever, Johnny is excited to provide fans with an intimate digital experience
+                like never before.
+              </summary>
+              <p>
+                (Available Worldwide) Watch Johnny perform from Toronto’s Danforth Music Hall, in a one hour fully produced concert that
+                will have fans dancing in their homes across the world.
+              </p>
+            </details>
+          </section>
+          <section class="curr main-curr">
+            <b>Currency: </b>
+            <select name="currency" id="currency">
+              <option value="USD">$ - US Dollar</option>
+              <option value="Euro">€ - Euro</option>
+              <option value="JPY">¥ - Japanese Yen</option>
+            </select>
+          </section>
+          <section class="price">
+            <section class="total">
+              <p>Total:</p>
+              <h2>$ <b style="font-weight: 600;"></b></h2>
+            </section>
+            <a href="/account/checkout">Go to Checkout</a>
+          </section>
         </div>
-      </div>
-    </header>
-
-    <div class="upcoming" #upcoming>
-      <h1>Upcoming Shows</h1>
-
-      <swiper [config]="config">
-        <div class="swiper-wrapper swiper-container carousel">
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide" *ngFor="let event of events" (mouseenter)="setMainAct(event)">
-              <img [src]="getCover(event.artists[0]?.cover.url)" alt="">
-              <section class="details">
-                <h3>{{ event.title }}</h3>
-                <h2>{{ event?.artists[0]?.name }}</h2>
-                <p class="date">{{ getShortEventDate(event) }}</p>
+        <div class="ticket-right">
+          <section class="cart-items">
+            <div class="choose-ticket">
+              <h2>Choose a Ticket <span class="ti-tooltip">Ticket info <img src="./assets/info.svg" alt="info"></span></h2>
+              <div class="tooltip">
+                <b>V.I.P. Ticket:</b> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga voluptatem unde reprehenderit
+                sint velit ipsa cum natus harum at quidem voluptatum itaque cumque atque eveniet, ab quam aperiam dolor?
+                Quidem?
+              </div>
+              <section class="selection">
+                <select name="ticket" id="ticket">
+                  <option value="Basic Stream" selected>Basic Stream</option>
+                  <option value="VIP Stream">VIP Stream</option>
+                </select>
+                <h3>$&nbsp;40.00</h3>
               </section>
-              <section class="hover-cta">
-                <button class="share">
-                  <img src="/assets/share.svg" alt="share"> Share
-                </button>
-                <button class="ticket" (click)="showModal()">
-                  <img src="/assets/black-ticket.svg" alt="ticket"> Get Ticket
-                </button>
+
+              <div class="free-items">
+                <h2>Included for free in your VIP Stream</h2>
+                <div class="item">
+                  <img src="./assets/newShirt.png" alt="harry styles t-shirt" class="t-shirt">
+                  <section class="item-details">
+                    <h4>Harry Styles Fine Line <br> T-Shirt</h4>
+                    <div class="quantity">
+                      <section class="options">
+                        <div>
+                          <label for="size">Size</label>
+                          <select name="size" id="size">
+                            <option value="Small" selected>S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                            <option value="Extra Large">XL</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label for="qty">Qty</label>
+                          <p class="selection-qty">1</p>
+                          <!-- <select name="qty" id="qty"> -->
+                          <!-- <option value="1" selected>1</option> -->
+                          <!-- <option value="Medium">2</option> -->
+                          <!-- <option value="Large">3</option> -->
+                          <!-- <option value="Extra Large">4</option> -->
+                          <!-- </select> -->
+                        </div>
+                      </section>
+                      <!-- <h3 id='second-price'>$ 30.00</h3> -->
+                    </div>
+                  </section>
+                </div>
+                <div class="item">
+                  <img src="./assets/newAlbum.png" alt="harry styles t-shirt" class="t-shirt">
+                  <section class="item-details">
+                    <h4>Harry Styles Fine Line <br> Album ART</h4>
+                    <div class="quantity">
+                      <section class="options">
+                        <div>
+                          <label for="qty">Qty</label>
+                          <p class="selection-qty">1</p>
+                          <!-- <select name="qty" id="qty"> -->
+                          <!-- <option value="1" selected>1</option> -->
+                          <!-- <option value="Medium">2</option> -->
+                          <!-- <option value="Large">3</option> -->
+                          <!-- <option value="Extra Large">4</option> -->
+                          <!-- </select> -->
+                        </div>
+                      </section>
+                      <!-- <h3 id='second-price'>$ 37.00</h3> -->
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <h2 class="merch-title">Merch</h2>
+            <div class="item">
+              <img src="./assets/newShirt.png" alt="harry styles t-shirt" class="t-shirt">
+              <section class="item-details">
+                <h4>Harry Styles Fine Line <br> T-Shirt</h4>
+                <div class="quantity">
+                  <section class="options">
+                    <div>
+                      <label for="size">Size</label>
+                      <select name="size" id="size">
+                        <option value="Small" selected>S</option>
+                        <option value="Medium">M</option>
+                        <option value="Large">L</option>
+                        <option value="Extra Large">XL</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="qty">Qty</label>
+                      <select name="qty" id="qty" class="shirt1">
+                        <option value="zero" selected>0</option>
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                        <option value="four">4</option>
+                      </select>
+                    </div>
+                  </section>
+                  <h3 id='second-price' class="sum">$ 0.00</h3>
+                </div>
               </section>
             </div>
-            <!-- End of Slides -->
-          </div>
-        </div>
-      </swiper>
-
-    </div>
-
-    <div class="ticket-modal-container" #ticketModalContainer>
-      <div class="ticket-modal">
-        <section class="ticket-modal-row">
-          <div class="ticket-left">
-            <h1>{{ main?.artists[0].name }}</h1>
-            <h2>{{ main?.title }}</h2>
-            <section class="date-duration">
-              <p class="date"><img src="/assets/calendar.svg"> {{ getEventDate(main) }}</p>
-              <p class="duration"><img src="/assets/clock.svg"> 1h 20min
-              </p>
-            </section>
-            <section class="preview">
-              <img src="/assets/yellow-play-btn.svg">
-              <span>Preview</span>
-            </section>
-            <section class="detail-description">
-              <span>Show all</span>
-              <details>
-                <summary>
-                  {{ main?.artists[0].description }}
-                </summary>
-                <p><br /><br /><br /></p>
-              </details>
-            </section>
-            <section class="price">
-              <section class="total">
-                <p>Total:</p>
-                <h2>{{ calculateTotals() | currency: 'USD' }}</h2>
+            <div class="item">
+              <img src="./assets/newAlbum.png" alt="harry styles t-shirt" class="t-shirt">
+              <section class="item-details">
+                <h4>Harry Styles Fine Line <br> Album ART</h4>
+                <div class="quantity">
+                  <section class="options">
+                    <div>
+                      <label for="qty">Qty</label>
+                      <select name="qty" id="qty" disabled>
+                        <option value="0" selected>0</option>
+                        <option value="Small">1</option>
+                        <option value="Medium">2</option>
+                        <option value="Large">3</option>
+                        <option value="Extra Large">4</option>
+                      </select>
+                    </div>
+                  </section>
+                  <h3 id='second-price'>Out of Stock</h3>
+                </div>
               </section>
-              <a routerLink="/account/checkout">Go to Checkout</a>
-            </section>
-          </div>
-          <div class="ticket-right">
-            <section class="cart-items">
-              <div class="choose-ticket">
-                <h2>Choose a Ticket</h2>
-                <section class="selection">
-                  <select name="ticket" id="ticket" #select (change)="setTicket(select.value)" [value]="getTicketVal()">
-                    <option [value]="ticket.id" *ngFor="let ticket of availableTickets">{{ ticket.name }}</option>
-                  </select>
-                  <h3>{{ selectedTicket?.price | currency:'USD' }}</h3>
-                </section>
-              </div>
-              <h2 class="merch-title">Merch</h2>
-              <div class="item" *ngFor="let item of availableMerchandise" #item>
-                <img [src]="getImage(item)" alt="harry styles t-shirt" class="t-shirt">
+            </div>
+
+            <section class="more-merch-container">
+              <div class="item">
+                <img src="./assets/newShirt.png" alt="harry styles t-shirt" class="t-shirt">
                 <section class="item-details">
-                  <h4>{{ item.name }}</h4>
+                  <h4>Harry Styles Fine Line <br> T-Shirt</h4>
                   <div class="quantity">
                     <section class="options">
-                      <div *ngIf="item.type === 'apparel'">
+                      <div>
                         <label for="size">Size</label>
                         <select name="size" id="size">
                           <option value="Small" selected>S</option>
@@ -116,26 +222,91 @@
                       </div>
                       <div>
                         <label for="qty">Qty</label>
-                        <select name="qty" id="qty" #select (change)="setItem(select, item)">
-                          <option [value]="q" *ngFor="let q of qty" [attr.data-item]="item.id">{{ q }}</option>
+                        <select name="qty" id="qty" class="shirt2">
+                          <option value="zero" selected>0</option>
+                          <option value="one">1</option>
+                          <option value="two">2</option>
+                          <option value="three">3</option>
+                          <option value="four">4</option>
                         </select>
                       </div>
                     </section>
-                    <h3 id='second-price'>{{ item.price | currency:'USD' }}</h3>
+                    <h3 id='second-price'>$ 30.00</h3>
                   </div>
                 </section>
               </div>
+              <div class="item">
+                <img src="./assets/newAlbum.png" alt="harry styles t-shirt" class="t-shirt">
+                <section class="item-details">
+                  <h4>Harry Styles Fine Line <br> Album ART</h4>
+                  <div class="quantity">
+                    <section class="options">
+                      <div>
+                        <label for="qty">Qty</label>
+                        <select name="qty" id="qty" disabled>
+                          <option value="0" selected>0</option>
+                          <option value="Small">1</option>
+                          <option value="Medium">2</option>
+                          <option value="Large">3</option>
+                          <option value="Extra Large">4</option>
+                        </select>
+                      </div>
+                    </section>
+                    <h3 id='second-price'>Out of Stock</h3>
+                  </div>
+                </section>
+              </div>
+              <div class="item">
+                <img src="./assets/newShirt.png" alt="harry styles t-shirt" class="t-shirt">
+                <section class="item-details">
+                  <h4>Harry Styles Fine Line <br> T-Shirt</h4>
+                  <div class="quantity">
+                    <section class="options">
+                      <div>
+                        <label for="size">Size</label>
+                        <select name="size" id="size">
+                          <option value="Small" selected>S</option>
+                          <option value="Medium">M</option>
+                          <option value="Large">L</option>
+                          <option value="Extra Large">XL</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="qty">Qty</label>
+                        <select name="qty" id="qty" class="shirt3">
+                          <option value="zero" selected>0</option>
+                          <option value="one">1</option>
+                          <option value="two">2</option>
+                          <option value="three">3</option>
+                          <option value="four">4</option>
+                        </select>
+                      </div>
+                    </section>
+                    <h3 id='second-price'>$ 30.00</h3>
+                  </div>
+                </section>
+              </div>
+            </section>
 
-            </section>
-          </div>
-          <section class="tablet-price">
-            <section class="total">
-              <p>Total:</p>
-              <h2>{{ calculateTotals() }}</h2>
-            </section>
-            <a href="#">Go to Checkout</a>
+            <p class="allMerch">View all merch</p>
           </section>
+        </div>
+        <section class="curr tab-curr">
+          <b>Currency: </b>
+          <select name="currency" id="currency">
+            <option value="USD">$ - US Dollar</option>
+            <option value="Euro">€ - Euro</option>
+            <option value="JPY">¥ - Japanese Yen</option>
+          </select>
         </section>
-      </div>
+        <section class="tablet-price">
+          <section class="total">
+            <p>Total:</p>
+            <h2>STD 1,027,042.09</h2>
+          </section>
+          <a href="./checkout/checkout_1.html">Go to Checkout</a>
+        </section>
+      </section>
     </div>
-  </main>
+  </div>
+</main>

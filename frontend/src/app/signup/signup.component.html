@@ -1,1 +1,68 @@
-<p>signup works!</p>
+<nav>
+  <section class="nav-links">
+    <a (click)="prevPage()" class="backbtn">&larr; Back to previous page</a>
+  </section>
+  <section class="user-profile">
+    <!-- <img src="./images/search.svg" alt="search"> -->
+  </section>
+</nav>
+
+<main class='signup-main'>
+  <!-- links -->
+  <a href="./signup-2.html" class="helper">page 2</a>
+
+  <img src="./assets/newstlogo.svg" alt="login sos logo">
+  <div class="signup-form">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <section *ngIf="step === 0">
+        <h2>Enter your email</h2>
+        <input type="email" placeholder="Email" class="email" (input)="onChange()" formControlName="email" required minlength="10" autocomplete="false">
+        <section class="checkbox">
+          <div class="box-container">
+            <div class="box"></div>
+          </div>
+          <span>Yes! I would like to receive updates, special offers, and other information from Studio On Sunset</span>
+        </section>
+        <section class="terms">
+          <span>
+            Studio on Sunset will use your data to personalize and improve your Disney+ experience and to send you information about
+            Disney+. You can change your communication preferences anytime. We may use your data as described in our <a
+              href="#">Privacy Policy</a>, including sharing it with the family of companies. By clicking “Agree & Continue”,
+            you agree to our <a href="#">Subscriber Agreement</a> and acknowledge that you have read our <a href="#">Privacy
+              Policy
+            </a>.
+          </span>
+          <button class="login-continue" #agreeBtn (click)="incrementStep()" [disabled]="!validEmail">
+            Agree & Continue
+          </button>
+        </section>
+      </section>
+      <section *ngIf="step === 1">
+        <h2>Enter a username</h2>
+        <input type="text" placeholder="Username" class="email" (input)="onChange()" formControlName="username" required minlength="4" autocomplete="false">
+        <section class="terms">
+          <button class="login-continue" #step2Btn (click)="incrementStep()" [disabled]="!validUsername">
+            Continue
+          </button>
+        </section>
+      </section>
+      <section *ngIf="step === 2">
+        <div class="signup-form">
+          <!-- <p class="pages">2 / 3</p> -->
+          <h2>Create a password</h2>
+          <input type="password" placeholder="Password" class="password-2" (input)="onChange()" formControlName="password" required minlength="8" autocomplete="false">
+          <p class="hint">Use a minimum of 6 characters with at least one number or special character</p>
+          <section class="current-email">
+            <p>You are using this email:</p>
+            <p>{{ signUpForm.value.email }}</p>
+          </section>
+
+          <button class="login-continue" [disabled]="!signUpForm.valid" #submitBtn>
+            Continue
+          </button>
+        </div>
+      </section>
+    </form>
+    <span>Already have an account? <a href="login">Log in</a></span>
+  </div>
+</main>

@@ -1,0 +1,125 @@
+<main class='replay-main r-mobile'>
+  <div class="sub-menu m-hide">
+    <h1>Replay Store</h1>
+    <section class="search">
+      <input type="text" placeholder='Try "Harry Styles"'>
+      <!-- <img src="./images/search.svg" alt="search"> -->
+    </section>
+    <a href="./recentlyAdded.html"> Recently Added </a>
+    <a href="./trending.html"> Trending </a>
+    <a href="./hiphop.html"> Hip Hop </a>
+    <a href="./pop.html"> Pop </a>
+    <a href="./indie.html"> Indie </a>
+    <a href="./country.html"> Country </a>
+  </div>
+  <div class="artist-grid">
+    <div class="top-menu">
+      <h1>Replay Store</h1>
+      <input type="text" placeholder='Try "Harry Styles"'>
+      <select name="category" id="category" onChange="window.location.href=this.value">
+        <option value="" hidden>Select Category</option>
+        <option value="./recentlyAdded.html">Recently Added</option>
+        <option value="./trending.html">Trending</option>
+        <option value="./hiphop.html">Hip Hop</option>
+        <option value="./pop.html">Pop</option>
+        <option value="./indie.html">Indie</option>
+        <option value="./country.html">Country</option>
+      </select>
+      <section>
+        <a href="./recentlyAdded.html"> Recently Added </a>
+        <a href="#"> Trending </a>
+        <a href="#"> Hip Hop </a>
+        <a href="#"> Pop </a>
+        <a href="#"> Indie </a>
+        <a href="#"> Country </a>
+      </section>
+    </div>
+    <section class="a-row recently-added">
+      <section class="selected-artist">
+        <div class="selected-top">
+          <div class="top-left">
+            <img src="./assets/harry-styles-bg-2.png" alt="harry styles" class="main-artist">
+            <div class="preview">
+              <img src="./assets/yellow-play.svg" alt="play button"> <span>Preview</span>
+            </div>
+          </div>
+          <section class="selected-details">
+            <h1>Harry Styles</h1>
+            <h2>Fine Line</h2>
+            <p>Streamed</p>
+            <div class="date-time">
+              <span class="date">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAfklEQVRIie2VwQ6AIAxDO8M3cTD+vXjpT82TCSHgBF288G7AaDMKAahAUklqba23fnkqMoq7QSB5AFiviRij5AXWUd3Vq2oKuXhrk0WrXkQ26QlzBP+QVTU56u8A+u+9Ra73zzsoO+odmwafMzOYGbxiZmDq+X+ZpfPXBu4dnFaWsEOY1x74AAAAAElFTkSuQmCC">                  <span>15
+                  Dec 2020, Fri 9pm EDT</span>
+              </span>
+              <span class="duration">
+                <img src="data:image/png;base64,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">
+                <span>1h 20min</span>
+              </span>
+            </div>
+            <div class="price">
+              <span>Price: </span>
+              <h3>$10.00</h3>
+            </div>
+            <a href="/account/checkout">Purchase Replay</a>
+          </section>
+        </div>
+        <div class="selected-info">
+          <h3>Info</h3>
+          <p>
+            Johnny will be streaming the It’s Never Really Over virtual world tour on Moment House, giving fans a unique live experience
+            across 13 tour dates. Watch Johnny perform from Toronto’s Danforth Music Hall, in a one hour fully produced
+            concert that will have fans dancing in their homes across the world.
+          </p>
+        </div>
+      </section>
+      <section class="row-details">
+        <h3>You might also like</h3>
+      </section>
+    </section>
+    <section class="row-artists purchase-may-also dragscroll">
+      <div class="artist">
+        <img src="./assets/harry-styles@2x.png" alt="harry styles">
+        <section class="ra-details">
+          <h3>Fine Line</h3>
+          <h2>Selena Gomez</h2>
+          <button class='purchase-replay'>Purchase Replay</button>
+        </section>
+      </div>
+      <div class="artist">
+        <img src="./assets/harry-styles@2x.png" alt="harry styles">
+        <section class="ra-details">
+          <h3>Show title</h3>
+          <h2>Bruno Mars</h2>
+          <button class='purchase-replay'>Purchase Replay</button>
+        </section>
+      </div>
+      <div class="artist">
+        <img src="./assets/harry-styles@2x.png" alt="harry styles">
+        <section class="ra-details">
+          <h3>The Lover Experience</h3>
+          <h2>Taylor Swift</h2>
+          <button class='purchase-replay'>Purchase Replay</button>
+        </section>
+      </div>
+      <div class="artist">
+        <img src="./assets/harry-styles@2x.png" alt="harry styles">
+        <section class="ra-details">
+          <h3>Fine Line</h3>
+          <h2>Harry Styles</h2>
+          <button class='purchase-replay'>Purchase Replay</button>
+        </section>
+      </div>
+      <div class="artist">
+        <img src="./assets/harry-styles@2x.png" alt="harry styles">
+        <section class="ra-details">
+          <h3>Fine Line</h3>
+          <h2>Selena Gomez</h2>
+          <button class='purchase-replay'>Purchase Replay</button>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
+<a href="./purchaseReplay.html" class='purchase-helper' style='visibility: hidden;'>helper</a>
