@@ -16,7 +16,7 @@ RUN npm install
 COPY ./ .
 
 # generate build
-RUN npm build --prod
+RUN npm run build
 
 ############
 ### prod ###
