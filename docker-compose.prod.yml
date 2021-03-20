@@ -12,16 +12,6 @@ services:
     ports:
       - 80:80
       - 443:443
-  #redis:
-    #image: "redis:alpine"
-    #command: redis-server
-    #ports:
-      #- "6379:6379"
-    #volumes:
-      #- $PWD/redis-data:/var/lib/redis
-      #- $PWD/redis.conf:/usr/local/etc/redis/redis.conf
-    #environment:
-      #- REDIS_REPLICATION_MODE=master
   strapi:
     build:
       context: ./app
@@ -32,8 +22,6 @@ services:
       - ./app:/app/srv/app
     ports:
       - '1337:1337'
-    depends_on:
-      # - redis
   frontend:
     build:
       context: ./frontend
@@ -45,4 +33,3 @@ services:
       - /usr/src/app/frontend/node_modules
     depends_on:
       - strapi
-      # - redis
