@@ -1,6 +1,16 @@
 version: "3.8"
 
 services:
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - $PWD/redis-data:/var/lib/redis
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_REPLICATION_MODE=master
   strapi:
     image: strapi/strapi
     restart: unless-stopped
@@ -23,7 +33,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - '4200:4200'
     networks:

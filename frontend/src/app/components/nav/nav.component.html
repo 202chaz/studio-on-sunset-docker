@@ -8,9 +8,19 @@
       <input type="text" name="search" id="search" placeholder="Events, Artists, Dates">
       <img src="./assets/search.svg" alt="search" id='mag-glass'>
     </section>
-    <section class="user-profile">
+    <section class="user-profile" *ngIf="!isAuthenticated">
       <a href="/login">Login</a>
       <button onclick="document.location='/signup'">Sign Up</button>
+    </section>
+    <section class="user-profile" *ngIf="isAuthenticated" (mouseover)="showMenu()" (mouseout)="closeMenu()">
+      <a href="../profile/myProfile.html" class="user-name">{{ currentUser.username }}</a>
+      <img src="../assets/user.svg" alt="user profile" class="user-avatar">
+      <div class="drop-nav" #dropNav>
+        <a href="../profile/myProfile.html">Profile</a>
+        <a href="../profile/helpAndSupport.html">Help & Support</a>
+        <div></div>
+        <a href="#" (click)="logout()">Log Out</a>
+      </div>
     </section>
     <section class="m-menu">
       <div class="tl"></div>
@@ -27,7 +37,7 @@
         <a href="./profile/myProfile.html"><img src="./assets/user-circle.svg" alt="user"> My Profile</a>
       </div>
 
-      <div class="login-signup">
+      <div class="login-signup" *ngIf="!isAuthenticated">
         <a href="/login" class="login">Login</a>
         <a href="/signup" class="signup"><p>Sign Up</p> <img src="./assets/chevron-right.svg" alt="right chevron"></a>
       </div>

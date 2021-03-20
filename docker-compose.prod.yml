@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - strapi
+      - frontend
+    restart: always # because it is routing traffic to our entire app
+    ports:
+      - 80:80
+      - 443:443
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - $PWD/redis-data:/var/lib/redis
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_REPLICATION_MODE=master
+  strapi:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.prod
+    env_file:
+      - ./app/.env
+    volumes:
+      - ./app:/app/srv/app
+    ports:
+      - '1337:1337'
+    depends_on:
+      - redis
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - '8080:80'
+    volumes:
+      - ./frontend:/usr/src/app/frontend
+      - /usr/src/app/frontend/node_modules
+    depends_on:
+      - strapi
+      - redis
