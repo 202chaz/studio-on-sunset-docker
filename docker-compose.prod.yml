@@ -33,7 +33,7 @@ services:
     ports:
       - '1337:1337'
     depends_on:
-      - redis
+      # - redis
   frontend:
     build:
       context: ./frontend
@@ -45,4 +45,4 @@ services:
       - /usr/src/app/frontend/node_modules
     depends_on:
       - strapi
-      - redis
+      # - redis
